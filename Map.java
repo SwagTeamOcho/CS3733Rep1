@@ -1,6 +1,8 @@
 import java.awt.Image;
 import java.util.LinkedList;
 
+import org.w3c.dom.Node;
+
 public class Map {
 	
 	private Image mapImage;
@@ -43,5 +45,21 @@ public class Map {
 	
 	public void addEdge(Edge edge){
 		this.edges.add(edge);
+	}
+	
+	public void deleteNode(Node node){
+		for(int i = 0; i < nodes.size; i++){
+			if(node.equals(nodes.get(i))){
+				nodes.remove(i);
+			}
+		}
+	}
+	
+	public void deleteEdge(Edge edge){
+		for(int i = 0; i < edges.size; i++){
+			if(edge.equals(edges.get(i))){
+				edges.remove(i);
+			}
+		}
 	}
 }
