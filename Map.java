@@ -11,9 +11,10 @@ public class Map {
 	private String mapName;
 	private Double scale;
 	
-	public Map(Image mapImage, String mapName){
+	public Map(Image mapImage, String mapName, Double scale){
 		this.mapImage = mapImage;
 		this.mapName = mapName;
+		this.scale = scale;
 	}
 	
 	public Image getImage(){
@@ -62,8 +63,8 @@ public class Map {
 				nodes.remove(i);
 			}
 		}
-		for(int j = 0;, j < node.EdgesList.size; j++){
-			Edge tempEdge = node.EdgesList.get(i);
+		for(int j = 0; j < node.getEdgesList().size; j++){
+			Edge tempEdge = node.getEdgesList().get(i);
 			this.deleteEdge(tempEdge);
 		}
 	}
