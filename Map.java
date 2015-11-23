@@ -9,6 +9,7 @@ public class Map {
 	private LinkedList<Node> nodes;
 	private LinkedList<Edge> edges;
 	private String mapName;
+	private Double scale;
 	
 	public Map(Image mapImage, String mapName){
 		this.mapImage = mapImage;
@@ -47,19 +48,23 @@ public class Map {
 		this.edges.add(edge);
 	}
 	
+	public void deleteEdge(Edge edge){
+		for(int i = 0; i < edges.size; i++){
+			if(edge.equals(edges.get(i))){
+				edges.remove(i);
+			}
+		}
+	}
+	
 	public void deleteNode(Node node){
 		for(int i = 0; i < nodes.size; i++){
 			if(node.equals(nodes.get(i))){
 				nodes.remove(i);
 			}
 		}
-	}
-	
-	public void deleteEdge(Edge edge){
-		for(int i = 0; i < edges.size; i++){
-			if(edge.equals(edges.get(i))){
-				edges.remove(i);
-			}
+		for(int j = 0;, j < node.EdgesList.size; j++){
+			Edge tempEdge = node.EdgesList.get(i);
+			this.deleteEdge(tempEdge);
 		}
 	}
 }
